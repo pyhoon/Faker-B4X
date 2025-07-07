@@ -1,0 +1,34 @@
+﻿AppType=StandardJava
+Build1=Default,b4j.example
+Group=Default Group
+Library1=jcore
+Module1=Faker
+NumberOfFiles=0
+NumberOfLibraries=1
+NumberOfModules=1
+Version=10.3
+@EndOfDesignText@
+'Non-UI application (console / server application)
+#Region Project Attributes 
+	#CommandLineArgs:
+	#MergeLibraries: True 
+#End Region
+'GitHub Desktop ide://run?file=%WINDIR%\System32\cmd.exe&Args=/c&Args=github&Args=..\..\
+
+Sub Process_Globals
+	Private fk As Faker
+End Sub
+
+Sub AppStart (Args() As String)
+	fk.Initialize
+	Log(fk.FullName)     ' e.g. Alice Miller
+	Log(fk.Email)        ' e.g. alice.smith@mail.com
+	Log(fk.PhoneNumber)  ' e.g. +6019-8745632
+	Log(fk.Address)      ' e.g. 123 Johnson Street, Tomtown
+	Log(fk.Username)
+	Log(fk.Password)
+	Log(fk.UUID)
+	Log(fk.RandomDate(2020, 2025))
+	Log(fk.LoremSentence(5))
+	Log(fk.LoremParagraph(2))
+End Sub
